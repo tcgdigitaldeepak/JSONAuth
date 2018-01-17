@@ -72,7 +72,7 @@ namespace TokenProvider.Controllers
             throw new ApplicationException(result.Errors.Select(x => x.Description).ToList().FirstOrDefault());
         }
 
-        private object GenerateJwtToken(string email, IdentityUser user)
+        private string GenerateJwtToken(string email, IdentityUser user)
         {
 
             try
@@ -96,8 +96,10 @@ namespace TokenProvider.Controllers
                     expires: expires,
                     signingCredentials: creds
                 );
-
-                return new JwtSecurityTokenHandler().WriteToken(token);
+                string s = new JwtSecurityTokenHandler().WriteToken(token).ToString();
+                Console.WriteLine(s);
+                //return new JwtSecurityTokenHandler().WriteToken(token);
+                return s;
             }
             catch (Exception ex)
             {
