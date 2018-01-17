@@ -7,9 +7,9 @@ namespace JSONAuth.Data
 {
     public class WishList
     {
-        public int id { get; set; }
-        public string country { get; set; }
-        public string name { get; set; }
-        public string type { get; set; }
+        public int Id { get; set; }
+        public string Country { get; set; }
+        public string Name { get; set; }
+        public string Type { get; set; }
     }
 }

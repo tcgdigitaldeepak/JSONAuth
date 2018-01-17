@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Swashbuckle.AspNetCore.Swagger;
 
-namespace JSONAuth
+namespace TokenProvider
 {
     public static class SwaggerServiceExtensions
     {
@@ -34,7 +34,6 @@ namespace JSONAuth
             app.UseSwaggerUI(c =>
             {
                 c.SwaggerEndpoint("/swagger/v1.0/swagger.json", "Versioned API v1.0");
-
                 c.DocExpansion("none");
             });
 

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using JSONAuth.Data;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.Extensions.Configuration;
@@ -42,7 +41,7 @@ namespace JSONAuth
                     .AddJwtBearer();
 
             services.AddMvc();
-            services.AddSwaggerDocumentation();
+            //services.AddSwaggerDocumentation();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -64,10 +63,10 @@ namespace JSONAuth
             {
                 routes.MapRoute(
                     name: "default",
-                    template: "{controller}/{action=Index}/{id?}");
+                    template: "{controller=Test}/{action=Index}/{id?}");
             });
 
-            app.UseSwaggerDocumentation();
+            //app.UseSwaggerDocumentation();
                      
         }
     }
